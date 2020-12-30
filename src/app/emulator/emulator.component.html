@@ -1,0 +1,51 @@
+<div class="container-fluid compare-form-width border-design rounded my-4 bg-white p-0">
+    <div class="text-center py-3 px-2" style="background-color: #0446b0">
+        <h4 class=" w-100 text-white" >EMULATE</h4>
+    </div>
+    
+    <form name="compareForm" [formGroup]="compareForm" (ngSubmit)="onSubmit()" class="m-4">
+       <div class="row mt-4">
+           <div class="col-md-6 form-group">
+                <label class="font-500" for="txtHeartRate">Heart Rate</label>
+                <input type="text" class="form-control" id="txtHeartRate" name="txtHeartRate" placeholder="Enter Heart Rate" formControlName="heartRate">
+                <!-- <div *ngIf="name.errors && (name.touched || name.dirty || isClicked)">
+                    <small *ngIf="name.errors.required" class="text-danger">Name is required</small>
+                    <small *ngIf="name.errors.pattern" class="text-danger">Name must contain characters only</small>
+                    <small *ngIf="name.errors.maxlength" class="text-danger">Name must not exceed 50 characters</small>
+                </div> -->
+           </div>
+           <div class="col-md-6 form-group">
+                <label class="font-500" for="txtOxySaturation">Oxygen Saturation</label>
+                <input type="test" class="form-control" id="txtOxySaturation" name="txtOxySaturation" placeholder="Enter Oxygen Saturation" formControlName="oxySaturation">
+                <!-- <div *ngIf="age.errors && (age.touched || age.dirty || isClicked)">
+                    <small *ngIf="age.errors.required" class="text-danger">Age is required</small>
+                    <small *ngIf="age.errors.min || age.errors.max" class="text-danger">Age must be between 18 and 50</small>
+                </div> -->
+           </div>
+           <div class="col-md-6 form-group">
+                <label class="font-500" for="txtBloodLow">Blood Pressure (Low)</label>
+                <input type="text" class="form-control" id="txtBloodLow" name="txtBloodLow" placeholder="Low" formControlName="bloodPrLow">
+                <!-- <div *ngIf="name.errors && (name.touched || name.dirty || isClicked)">
+                    <small *ngIf="name.errors.required" class="text-danger">Name is required</small>
+                    <small *ngIf="name.errors.pattern" class="text-danger">Name must contain characters only</small>
+                    <small *ngIf="name.errors.maxlength" class="text-danger">Name must not exceed 50 characters</small>
+                </div> -->
+            </div>
+            <div class="col-md-6 form-group">
+                <label class="font-500" for="txtBloodHigh">Blood Pressure (High)</label>
+                <input type="text" class="form-control" id="txtBloodHigh" name="txtBloodHigh" placeholder="High" formControlName="bloodPrHigh">
+                <!-- <div *ngIf="name.errors && (name.touched || name.dirty || isClicked)">
+                    <small *ngIf="name.errors.required" class="text-danger">Name is required</small>
+                    <small *ngIf="name.errors.pattern" class="text-danger">Name must contain characters only</small>
+                    <small *ngIf="name.errors.maxlength" class="text-danger">Name must not exceed 50 characters</small>
+                </div> -->
+            </div>
+            
+       </div> 
+       <div class="row my-4">
+            <div class="col-12  pb-5 text-center align-center">
+                <button type="submit" class="btn text-white trigger-button"  >Trigger</button>
+            </div>
+        </div>  
+    </form> 
+</div>

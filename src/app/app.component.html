@@ -1,0 +1,75 @@
+<!-- src/app/app.component.html -->
+<!-- this container wraps our entire app in the sidenav content container. this allows the sidenav to take up the entire content area -->
+<mat-sidenav-container class="app-content" color="primary">
+  <mat-sidenav *ngIf="selectedUser?.userid"
+    #appSideNav
+    [mode]="viewportMobileQuery.matches ? 'over' : 'side'"
+    [opened]="!viewportMobileQuery.matches"
+    [fixedInViewport]="viewportMobileQuery.matches"
+    style="border: none; background-color: #0446b0;" class="text-white"
+  >
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <h1>Menu</h1>
+        <span class="fill-space"></span>
+        <button mat-icon-button *ngIf="viewportMobileQuery.matches" (click)="appSideNav.close()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div style="text-align: center">
+      <mat-icon matListIcon style="font-size: 40pt; margin-left: -30px; margin-top: 30px;">account_circle</mat-icon><br />
+      <h6>{{selectedUser?.firstname + ' ' +  selectedUser?.lastname}}</h6>
+      <small>WELCOME TO WBAN DASHBOARD</small><br>
+      <mat-divider class="bg-white mt-5"></mat-divider>
+    </div>
+    <mat-nav-list class="text-white mt-5" >
+      <mat-list-item routerLink="/PhysicalActivity"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>table_chart</mat-icon>
+        <span matLine>PHYSICAL ACTIVITY</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/MedicalActivity"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>bar_chart</mat-icon>
+        <a matLine>MEDICAL VITALS</a>
+      </mat-list-item>
+      <mat-list-item routerLink="/emulator"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>alarm</mat-icon>
+        <a matLine>EMULATOR</a>
+      </mat-list-item>
+      <!-- <mat-list-item routerLink="/policyView"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>show_chart</mat-icon>
+        <a matLine>POLICY VIEW</a>
+      </mat-list-item> -->
+      <!-- <mat-list-item routerLink="/claimType"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>pie_chart</mat-icon>
+        <a matLine>CLAIM TYPE</a>
+      </mat-list-item> -->
+      <!-- <mat-list-item routerLink="/brokerView"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>broken_image</mat-icon>
+        <a matLine>BROKER VIEW</a>
+      </mat-list-item> -->
+      <!-- <mat-list-item routerLink="/productLaunch"  routerLinkActive="active-link" class="text-white">
+        <mat-icon matListIcon>calendar_today</mat-icon>
+        <a matLine>PRODUCT LAUNCH</a>
+      </mat-list-item> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    <mat-toolbar color="primary" class="main-toolbar">
+      <mat-toolbar-row>
+        <button mat-icon-button *ngIf="viewportMobileQuery.matches">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h1  class="app-brand">
+          <span style="cursor: pointer;" (click)="goToHome()">Wireless Body Area Network</span>
+        </h1>
+        <span style="margin-left: auto;"><img width="120px" height="64px" src="../assets/img/cognizant-vector-logo.png"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <main class="main-content-inner" style="background-color: #e8ebe9;" [ngClass]="{'back-image': !selectedUser?.userid}">
+      <section class="content-area">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

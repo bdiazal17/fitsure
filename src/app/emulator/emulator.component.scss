@@ -1,0 +1,33 @@
+@media (max-width: 576px) {
+    .compare-form-width{
+        width: 85%;
+    }
+}
+
+@media (min-width: 768px) {
+    .compare-form-width{
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .compare-form-width{
+        width: 40%;
+    }
+}
+
+.red-border-class {
+    border: 1px solid red;
+
+}
+.border-design {
+    border : 1px solid #0446b0;
+    box-shadow: 0 10px 10px rgba(0,0,0,.1), 0 10px 12px rgba(0,0,0,.1);
+}
+.font-500 {
+    font-weight: 500;
+}
+.trigger-button {
+    background-color: #dc3912;
+    letter-spacing: 1px;
+}
